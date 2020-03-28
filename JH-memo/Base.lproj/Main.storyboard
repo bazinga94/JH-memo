@@ -82,7 +82,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bgX-7O-SUk"/>
+                    <navigationItem key="navigationItem" id="bgX-7O-SUk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8L9-qg-gZd">
+                            <connections>
+                                <action selector="addMemo:" destination="BYZ-38-t0r" id="XTX-PH-qkK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="WqD-no-qGb" id="D6E-XP-cEd"/>
                     </connections>
@@ -98,13 +104,38 @@
                     <view key="view" contentMode="scaleToFill" id="d0c-vm-GQi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-0A-3AG">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqf-8e-x1j">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="64T-2E-Yyg" firstAttribute="bottom" secondItem="vqf-8e-x1j" secondAttribute="bottom" id="Ghg-A9-4F7"/>
+                                    <constraint firstItem="64T-2E-Yyg" firstAttribute="trailing" secondItem="vqf-8e-x1j" secondAttribute="trailing" id="PzH-bs-kav"/>
+                                    <constraint firstItem="vqf-8e-x1j" firstAttribute="leading" secondItem="64T-2E-Yyg" secondAttribute="leading" id="gGj-T0-kIe"/>
+                                    <constraint firstItem="vqf-8e-x1j" firstAttribute="top" secondItem="64T-2E-Yyg" secondAttribute="top" id="m3L-OO-0OZ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Iqj-hj-EQ9"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="64T-2E-Yyg"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gk1-0A-3AG" secondAttribute="trailing" id="0p5-5R-6qG"/>
+                            <constraint firstItem="gk1-0A-3AG" firstAttribute="bottom" secondItem="eU9-kH-UMk" secondAttribute="bottom" id="59y-Qf-DLG"/>
+                            <constraint firstItem="gk1-0A-3AG" firstAttribute="top" secondItem="eU9-kH-UMk" secondAttribute="top" id="TAg-mS-lgy"/>
+                            <constraint firstItem="gk1-0A-3AG" firstAttribute="leading" secondItem="d0c-vm-GQi" secondAttribute="leading" id="efa-Tc-dLg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eU9-kH-UMk"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eay-Ts-LUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="118"/>
+            <point key="canvasLocation" x="1768.1159420289857" y="117.85714285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4iA-Wm-pj7">
