@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  JH-memo
 //
 //  Created by Jongho Lee on 2020/03/17.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var tableView: UITableView!
+	var delegate: SendDataDelegate?
+	var rowString: String?
 
 	var sampleCellTitle = ["JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH", "JH"]
 
@@ -28,6 +30,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: false)
+		let storyBoard: UIStoryboard! = UIStoryboard(name: "Main", bundle: nil)
+		let editViewController: EditViewController = (storyBoard.instantiateViewController(withIdentifier: "Edit") as? EditViewController)!
+		self.navigationController?.pushViewController(editViewController, animated: true)
+		self.rowString = String(indexPath.row)
 	}
 
 	override func viewDidLoad() {
@@ -37,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		// Do any additional setup after loading the view.
 	}
 
-
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	}
 }
 
